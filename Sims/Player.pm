@@ -12,7 +12,7 @@ sub new{
   my $runner = sub{
     my ($env) = @_;
     foreach (@{$self->{QUEUE}}){
-      $_->($env);
+      $_->($self, $env);
     }
     return !0;
   };
